@@ -4,7 +4,7 @@ var _imagens = [
         id: 1,
         titulo: 'imagem 1',
         url: "http://lorempixel.com/800/800/sports/1/",
-        elementoSelecionado: "elemento imagem 1"
+        borda: 'card-img-top imgborda',
     },
     {
         id: 2,
@@ -25,10 +25,18 @@ var _imagens = [
 new Vue({
     el: '#app',
     data: {
-        imagens: _imagens
+        imagens: _imagens,
+       
+        
+    },
+    computed: {
+     
+        
     },
     methods: {
         selecionarImg: function (imagem) {
+            //armazenando id no localStorage
+            localStorage.setItem("IdImagem", imagem);
             alert('voce selecionou: ' + imagem)
         }
     }
