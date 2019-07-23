@@ -11,68 +11,44 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <!--Importanto o Vue-->
     <script src="vue.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
     <head>
         <title>Jogo da Memória</title>
     </head>
 
     <body>
+
+
         <div id="app">
+            <button @click="SortearImagens()">sortear</button>
+
             <div class="container">
                 <div class="row">
                     <div class="col">
+                            
                         <div class="card">
-                           
-                            <!--Percorrer todas imagens-->
-                            <div v-for="img in imagens">
-                                <!--Verificando id imagem-->
-                                <div v-if="img.id == 1">
+                                <div id="sortearimagens">
+                                <!--Percorrer todas imagens-->
+                                <div v-for="img in imagens">
+                                    <!--Verificando id imagem-->
+                                    <!--<div v-if="img.id == 1"> -->
                                     <!--Método para identificar a imagem selecionada-->
                                     <a href="#" @click="selecionarImg(img.id)">
                                         <img v-bind:src="img.url" v-bind:class="img.borda" alt=""></a>
                                     <!--título da imagem-->
                                     <p class="card-text ">{{img.titulo}} </p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div v-for="img in imagens">
-                                <div v-show="img.id == 2">
-                                    <a href="#" @click="selecionarImg(img.id)"> <img v-bind:src="img.url"
-                                            class="card-img-top" alt=""></a>
-                                    <p class="card-text">{{img.titulo}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div v-for="img in imagens">
-                                <div v-if="img.id == 3">
-                                    <a href="#" @click="selecionarImg(img.id)"> <img v-bind:src="img.url"
-                                            class="card-img-top" alt=""></a>
-                                    <p class="card-text">{{img.titulo}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div v-for="img in imagens">
-                                <div v-if="img.id == 1">
-                                    <a href="#" @click="selecionarImg(img.id)"> <img v-bind:src="img.url"
-                                            class="card-img-top" alt=""></a>
-                                    <p class="card-text">{{img.titulo}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            
 
+                        </div>
+                    </div>
+                    </div>
 
                 </div>
+
             </div>
+        </div>
     </body>
     <script src="game.js"></script>
 

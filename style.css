@@ -1,5 +1,11 @@
 .imgborda {
     border: 5px solid red;
-   
-   
+    
 }
+
+#sortearimagens{
+  
+    width: 200px;
+    display: inline-block;
+}
+
