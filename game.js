@@ -18,7 +18,7 @@ var _imagens = [
     },
     {
         id: 4,
-        titulo: 'imagem 4',
+        titulo: 'imagem 44',
         url: "http://lorempixel.com/200/200/sports/1/"
     },
 ]
@@ -35,9 +35,22 @@ new Vue({
     },
     methods: {
         selecionarImg: function (imagem) {
-            //armazenando id no localStorage
-            localStorage.setItem("IdImagem", imagem);
-            alert('voce selecionou: ' + imagem)
+            //primeiro clique verifica se tem algo no no localStorage
+            if (localStorage.getItem("IdImagem") === null) {
+                //armazenando id no localStorage
+                localStorage.setItem("IdImagem", imagem);
+           //comparando o id da imagem com localstorage
+            } else if (localStorage.getItem("IdImagem") == imagem) {
+                alert('é igual');
+                localStorage.clear();
+            } else { 
+                alert('nao é igual')
+                localStorage.clear();
+            }
+            
+           
+            
+            
         }
     }
 }); 
