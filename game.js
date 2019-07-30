@@ -2,23 +2,27 @@
 var _imagens = [
     {
         id: 1,
-        titulo: 'imagem 1',
-        url: "http://lorempixel.com/800/800/sports/1/",
-        borda: 'card-img-top imgborda',
+		valor: 1,
+        titulo: 'Id 1, valor 1',
+        url: "http://lorempixel.com/200/200/sports/1/",
+        
     },
     {
         id: 2,
-        titulo: 'imagem 2',
+		valor: 2,
+        titulo: 'Id 2, valor 2',
         url: "http://lorempixel.com/200/200/sports/2/"
     },
     {
         id: 3,
-        titulo: 'imagem 3',
+		valor: 0,
+        titulo: 'Id 3, valor 0',
         url: "http://lorempixel.com/200/200/sports/3/"
     },
     {
-        id: 1,
-        titulo: 'imagem 1',
+        id: 4,
+		valor: 1, 
+        titulo: 'Id 4, valor 1',
         url: "http://lorempixel.com/200/200/sports/1/"
     },
 ]
@@ -35,26 +39,36 @@ new Vue({
     },
     methods: {
         selecionarImg: function (imagem) {
+
             //primeiro clique verifica se tem algo no no localStorage
             if (localStorage.getItem("IdImagem") === null) {
                 //armazenando id no localStorage
-                localStorage.setItem("IdImagem", imagem);
-                //comparando o id da imagem com localstorage
-            } else if (localStorage.getItem("IdImagem") == imagem) {
-                alert('é igual');
+                localStorage.setItem("IdImagem", imagem.id);
+                //armazenando Valor no localStorage
+                localStorage.setItem("ValorImagem", imagem.valor);
+				//comparando se o valor da imagem é = e Id diferente
+            }else if (localStorage.getItem("ValorImagem") == imagem.valor && localStorage.getItem("IdImagem") != imagem.id) {
+                alert('Encontou as imagens');
+                //limpando os dados do localStorage
                 localStorage.clear();
-            } else {
+            } else if (localStorage.getItem("IdImagem") == imagem.id ){
+                alert('Você selecionou a mesma imagem')
+                 //limpando os dados do localStorage
+                localStorage.clear();
+			} else{
                 alert('nao é igual')
+                 //limpando os dados do localStorage
                 localStorage.clear();
             }
         },
+        //Sorteando imagens
         SortearImagens: function () {
-            debugger
             var div = $("#sortearimagens");
             var lis = div.children();
             var sorteada = Math.floor(Math.random() * lis.length);
             for (var i = 0; i < sorteada; i++)
                 lis.eq(i).detach().appendTo(div);
-        }
+        },
+   
     }
 }); 
