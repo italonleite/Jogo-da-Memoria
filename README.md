@@ -2,11 +2,10 @@
 Jogo da Memória - VueJs
 
 A ideia inicial do projeto é :
-- etapa1 - exibir as imagens
-- etapa2 - Selecionar o nivel de dificuldade(facil, médio, dificil)
-- etapa3 - esconder as imagens
-- etapa4 - O usuário, selecionará as imagens para descobrir os pares de figuras
-- Se acertar, será removido as figuras
+- etapa1 - Selecionar o nivel de dificuldade(facil, médio, dificil)
+- etapa2 - exibir imagens, escondidas 
+- etapa3 - Selecionar duas imagens para realizar a comparação
+- Se acertar, será removido da lista de figuras ou aplicar style fundo branco
 - Se errar, volta para a etapa 3
 
 
