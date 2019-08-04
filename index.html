@@ -16,30 +16,28 @@
     <head>
         <title>Jogo da Memória</title>
     </head>
+
     <body>
         <div id="app">
             <button @click="SortearImagens()">sortear</button>
-          
+
             <div class="container">
                 <div class="row">
                     <div class="col">
+
                         <div class="card">
                             <div id="sortearimagens">
-                                <div class="card-image" v-for="img in imagens">
-                                    <!--Percorrer todas imagens-->
-                                    <a href="#" @click="selecionarImg(img)">
-                                        <!--Método para identificar a imagem selecionada-->
+                                <div class="card-image" v-for="img in imagens" v-bind:class="{fundo: img.branco}">
+                                    <template v-if="img.branco == true">
+                                        
+                                    </template>
+                                    <template v-else>
+                                        <a href="#" @click="selecionarImg(img)" >
                                         <img v-bind:src="img.url" alt=""></a>
-                                    <p class="card-text ">{{img.titulo}} </p>
-                                    <!--título da imagem-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-    <script src="game.js"></script>
+                                        <p class="card-text ">{{img.titulo}} </p>
+                                     
+                                    </template>
+                                     </div> </div> </div> </div> </div> </div> </body> <script src="game.js">
+                                    </script>
 
 </html>
