@@ -2,9 +2,8 @@
 var _imagens = [
     {
         id: 1,
-		valor: 1,
-        titulo: 'Id 1, valor 1',
-        url: "http://lorempixel.com/200/200/sports/1/",
+		valor: 'carro',
+        titulo: 'carro',
         branco: false
    
 
@@ -12,24 +11,21 @@ var _imagens = [
     },
     {
         id: 2,
-		valor: 2,
-        titulo: 'Id 2, valor 2',
-        url: "http://lorempixel.com/200/200/sports/2/",
+		valor: 'aviao',
+        titulo: 'aviao',
         branco: false
     
     },
     {
         id: 3,
-		valor: 0,
-        titulo: 'Id 3, valor 0',
-        url: "http://lorempixel.com/200/200/sports/3/",
+		valor: 'aviao',
+        titulo: 'aviao',
         branco: false
     },
     {
         id: 4,
-		valor: 1, 
-        titulo: 'Id 4, valor 1',
-        url: "http://lorempixel.com/200/200/sports/1/",
+		valor: 'carro', 
+        titulo: 'carro',
         branco: false
        
         
@@ -47,18 +43,26 @@ new Vue({
 
         selecionarImg: function (imagem) {
             
-
-            //primeiro clique verifica se tem algo no no localStorage
+             //primeiro clique verifica se tem algo armazenado no localStorage
             if (localStorage.getItem("IdImagem") === null) {
-              
+               
                 //armazenando id no localStorage
                 localStorage.setItem("IdImagem", imagem.id);
                 //armazenando Valor no localStorage
                 localStorage.setItem("ValorImagem", imagem.valor);
-				//comparando se os valores das imagens é = e Ids diferentes
-            }else if (localStorage.getItem("ValorImagem") == imagem.valor && localStorage.getItem("IdImagem") != imagem.id) {
-                
-                imagem.branco = true
+                //atribuindo valor na váriavel implicita
+                imagem1 = localStorage.getItem("ValorImagem");
+              
+				//comparando se os valores das imagens é igual e Ids diferentes
+            }else if (imagem1 == imagem.valor && localStorage.getItem("IdImagem") != imagem.id) {
+                  
+                for (var i = 0; i < _imagens.length; i++) { 
+                    //varrendo as imagens que tenha o mesmo valor da imagem1
+                    if (_imagens[i].valor == imagem1) { 
+                        _imagens[i].branco = true;
+                        imagem.branco = true
+                    }
+                }
                 
                 alert('Encontou as imagens');
 

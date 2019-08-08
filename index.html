@@ -27,13 +27,14 @@
 
                         <div class="card">
                             <div id="sortearimagens">
-                                <div class="card-image" v-for="img in imagens" v-bind:class="{fundo: img.branco}">
+                                <div class="card-image" v-for="img in imagens" :key="img.id" v-bind:class="{fundo: img.branco}">
                                     <template v-if="img.branco == true">
-                                        
+                                                                                
                                     </template>
                                     <template v-else>
                                         <a href="#" @click="selecionarImg(img)" >
-                                        <img v-bind:src="img.url" alt=""></a>
+                                        <img :src="'/images/' + img.id + '.jpg'"> 
+                                        </a>
                                         <p class="card-text ">{{img.titulo}} </p>
                                      
                                     </template>
