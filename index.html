@@ -19,26 +19,35 @@
 
     <body>
         <div id="app">
-            <button @click="SortearImagens()">sorteaar</button>
-
+            <button @click="SortearImagens()">sortear</button>
+           
             <div class="container">
+                  
                 <div class="row">
                     <div class="col">
-
+                            
                         <div class="card">
-                            <div id="sortearimagens">
-                                <div class="card-image" v-for="img in imagens" :key="img.id" v-bind:class="{fundo: img.branco}">
+                                <div id="sortearimagens">
+                                <div class="card-image" v-for="img in imagens" :key="img.id"
+                                    v-bind:class="{fundo: img.branco}">
                                     <template v-if="img.branco == true">
-                                                                                
+
                                     </template>
                                     <template v-else>
-                                        <a href="#" @click="selecionarImg(img)" >
-                                        <img :src="'images/' + img.id + '.jpg'"> 
+                                        <a href="#" @click="selecionarImg(img)">
+                                        <img :src="'images/' + img.id + '.jpg'">
                                         </a>
                                         <p class="card-text ">{{img.titulo}} </p>
-                                     
+
                                     </template>
-                                     </div> </div> </div> </div> </div> </div> </body> <script src="game.js">
-                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+    <script src="game.js">
+    </script>
 
 </html>
