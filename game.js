@@ -2,8 +2,8 @@
 var _imagens = [
     {
         id: 1,
-		valor: 'carro',
-        titulo: 'carro',
+		valor: 'basebal',
+        titulo: 'basebal',
         branco: false
    
 
@@ -11,21 +11,21 @@ var _imagens = [
     },
     {
         id: 2,
-		valor: 'aviao',
-        titulo: 'aviao',
+		valor: 'surfista',
+        titulo: 'surfista',
         branco: false
     
     },
     {
         id: 3,
-		valor: 'aviao',
-        titulo: 'aviao',
+		valor: 'ciclista',
+        titulo: 'ciclista',
         branco: false
     },
     {
         id: 4,
-		valor: 'carro', 
-        titulo: 'carro',
+		valor: 'basebal', 
+        titulo: 'basebal',
         branco: false
        
         
